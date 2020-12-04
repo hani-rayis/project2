@@ -22,15 +22,20 @@ export default function App() {
             iconName = "ios-home";
               
           } else if (route.name === 'Settings') {
-            iconName = focused ? 'ios-list-box' : 'ios-list';
+            iconName = "ios-settings";
+
+          } else if (route.name === 'Contact') {
+            iconName = "ios-call"
+
           }
+
 
           // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'tomato',
+        activeTintColor: 'blue',
         inactiveTintColor: 'gray',
       }}
       >
