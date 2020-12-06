@@ -3,9 +3,10 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from "react-native-vector-icons/Ionicons";
-import HomeScreen from './Screens/HomeScreen'
-import SettingsScreen from './Screens/SettingsScreen'
-import ContactScreen from './Screens/ContactScreen'
+import HomeScreen from './Screens/HomeScreen';
+import EventsScreen from './Screens/EventsScreen';
+import SettingsScreen from './Screens/SettingsScreen';
+import ContactScreen from './Screens/ContactScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,12 +21,15 @@ export default function App() {
 
           if (route.name === 'Home') {
             iconName = "ios-home";
+
+          } else if (route.name === 'Events') {
+            iconName = "ios-menu";
               
           } else if (route.name === 'Settings') {
             iconName = "ios-settings";
 
           } else if (route.name === 'Contact') {
-            iconName = "ios-call"
+            iconName = "ios-mail"
 
           }
 
@@ -35,11 +39,12 @@ export default function App() {
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'blue',
+        activeTintColor: 'black',
         inactiveTintColor: 'gray',
       }}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Events" component={EventsScreen} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
         <Tab.Screen name="Contact" component={ContactScreen} />
       </Tab.Navigator>
