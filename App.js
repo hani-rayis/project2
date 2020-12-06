@@ -1,17 +1,18 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeScreen from './Screens/HomeScreen';
 import EventsScreen from './Screens/EventsScreen';
-import SettingsScreen from './Screens/SettingsScreen';
+import FAQ from './Screens/FAQ';
 import ContactScreen from './Screens/ContactScreen';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
+    
     <NavigationContainer>
       <Tab.Navigator
       
@@ -24,10 +25,10 @@ export default function App() {
 
           } else if (route.name === 'Events') {
             iconName = "ios-menu";
-              
-          } else if (route.name === 'Settings') {
-            iconName = "ios-settings";
 
+          } else if (route.name === 'FAQ') {
+            iconName = "ios-help"
+           
           } else if (route.name === 'Contact') {
             iconName = "ios-mail"
 
@@ -45,7 +46,7 @@ export default function App() {
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Events" component={EventsScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="FAQ" component={FAQ}/>
         <Tab.Screen name="Contact" component={ContactScreen} />
       </Tab.Navigator>
     </NavigationContainer>
